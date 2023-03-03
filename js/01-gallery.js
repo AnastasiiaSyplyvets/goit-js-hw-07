@@ -48,11 +48,21 @@ const instance = basicLightbox.create(
 	` <img src="${event.target.dataset.source}" width="800" height="600">`
 )
 instance.show();
-  console.log("hello")
+
+
+// ESC
+
+window.addEventListener('keydown', onEscKeyDown);
+
+function onEscKeyDown(event) {
+  
+  if(event.code === 'Escape') {
+    instance.close();
+  }
+ 
+};
+
 });
 
 
-let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', function () {
-	// do something…
-});
+
